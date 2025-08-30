@@ -1,5 +1,4 @@
 import express from 'express';
-import { version } from 'react';
 
 const app = express();
 const PORT = process.env.PORT || 4545;
