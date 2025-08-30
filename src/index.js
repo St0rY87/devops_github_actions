@@ -1,10 +1,11 @@
 import express from 'express';
+import { version } from 'react';
 
 const app = express();
 const PORT = process.env.PORT || 4545;
 
 app.get('/ping', (req, res) => {
-    res.send({ message: 'pong' });
+    res.send({ message: 'pong', version: '1.0.0' });
 });
 
 app.listen(PORT, () => {
