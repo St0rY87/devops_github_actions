@@ -42,7 +42,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             echo ${{ secrets.DOCKER_PASS }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
-            docker pull ${{ secrets.DOCKER_USER }}/devops-node-starter:${{ github.sha }}
-            docker stop devops-node-starter || true
-            docker rm devops-node-starter || true
-            docker run -d --name devops-node-starter -p 4545:4545 ${{ secrets.DOCKER_USER }}/devops-node-starter:${{ github.sha }}
+            docker pull ${{ secrets.DOCKER_USER }}/my-node-app:${{ github.sha }}
+            docker stop my-node-app || true
+            docker rm my-node-app || true
+            docker run -d --name my-node-app -p 4545:4545 ${{ secrets.DOCKER_USER }}/my-node-app:${{ github.sha }}
